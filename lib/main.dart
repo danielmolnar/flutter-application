@@ -59,9 +59,9 @@ class MyColumn extends StatelessWidget {
             constraints:
                 BoxConstraints(minHeight: height, minWidth: 100, maxWidth: 800),
             decoration: BoxDecoration(
-                color: HexColor("14022b"),
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                border: Border.all(color: Colors.white, width: 2)),
+              color: HexColor("14022b"),
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+            ),
             child: Column(
               children: <Widget>[
                 Padding(
