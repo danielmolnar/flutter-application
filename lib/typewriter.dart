@@ -51,7 +51,7 @@ class _TypeWriterState extends State<TypeWriter> {
                   textStyle: TextStyle(
                       height: 2,
                       fontSize: 20,
-                      color: Colors.black,
+                      color: Colors.white,
                       decoration: TextDecoration.none)))),
       alignment: Alignment.topCenter,
     );
