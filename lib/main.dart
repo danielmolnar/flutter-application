@@ -37,7 +37,7 @@ class MyHomePage extends StatelessWidget {
                           color: Colors.white,
                           decoration: TextDecoration.none))),
             )),
-        backgroundColor: Colors.white,
+        backgroundColor: HexColor('101532'),
         body: SingleChildScrollView(
           child: Container(alignment: Alignment.center, child: MyColumn()),
         ));
@@ -51,7 +51,10 @@ class MyColumn extends StatelessWidget {
     double height = size.height;
     double width = size.width;
     return Padding(
-        padding: EdgeInsets.only(bottom: 30, top: 50),
+        padding: EdgeInsets.only(
+          bottom: 50,
+          top: 50,
+        ),
         child: Container(
             width: width * 0.9,
             constraints:
