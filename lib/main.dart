@@ -4,8 +4,10 @@ import 'create_material_color.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
 
-void main() {
+Future main() async {
+  await DotEnv.load(fileName: ".env");
   runApp(MyApp());
 }
 
