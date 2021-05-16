@@ -1,7 +1,8 @@
-import 'get_hex_color.dart';
 import 'typewriter.dart';
+import 'get_hex_color.dart';
 import 'create_material_color.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -59,6 +60,39 @@ class MyColumn extends StatelessWidget {
                 color: HexColor("14022b"),
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 border: Border.all(color: Colors.white, width: 2)),
-            child: TypeWriter()));
+            child: Column(
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(bottom: 25, top: 27),
+                  child: _myLogo(),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 25, right: 25, bottom: 25),
+                  child: TypeWriter(),
+                )
+              ],
+            )));
   }
+}
+
+const _url = 'https://danielmolnar.dev';
+void _launchURL() async =>
+    await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
+
+Widget _myLogo() {
+  return Material(
+    color: Color(0x00000000),
+    child: InkWell(
+      onTap: () => _launchURL(),
+      child: Container(
+        height: 150,
+        alignment: Alignment.center,
+        child: Image.asset(
+          'assets/Logo.webp',
+          fit: BoxFit.contain,
+          width: 150,
+        ),
+      ),
+    ),
+  );
 }
