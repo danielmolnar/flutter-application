@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Job Application',
         theme: ThemeData(
-          primarySwatch: createMaterialColor(Color(0xFF14022b)),
+          primarySwatch: createMaterialColor(Color(0xFF221437)),
         ),
         home: MyHomePage());
   }
@@ -27,6 +27,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+            elevation: 20.0,
             centerTitle: true,
             title: Padding(
               padding: EdgeInsets.all(15.0),
@@ -37,7 +38,7 @@ class MyHomePage extends StatelessWidget {
                           color: Colors.white,
                           decoration: TextDecoration.none))),
             )),
-        backgroundColor: HexColor('101532'),
+        backgroundColor: HexColor('568ba4'),
         body: SingleChildScrollView(
           child: Container(alignment: Alignment.center, child: MyColumn()),
         ));
@@ -57,10 +58,20 @@ class MyColumn extends StatelessWidget {
         ),
         child: Container(
             width: width * 0.9,
-            constraints:
-                BoxConstraints(minHeight: height, minWidth: 100, maxWidth: 800),
-            decoration: BoxDecoration(
-              color: HexColor("14022b"),
+            constraints: BoxConstraints(
+              minHeight: height,
+              minWidth: 100,
+              maxWidth: 800,
+            ),
+            decoration: new BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(.5),
+                  blurRadius: 10.0,
+                  spreadRadius: 1.0,
+                )
+              ],
+              color: HexColor("221437"),
               borderRadius: BorderRadius.all(Radius.circular(20)),
             ),
             child: Column(
